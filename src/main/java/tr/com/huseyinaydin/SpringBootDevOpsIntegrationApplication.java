@@ -11,7 +11,7 @@ public class SpringBootDevOpsIntegrationApplication {
 
     @GetMapping("/selam")
     public String selamlar(){
-        return "Selamun aleyküm";
+        return "Selamun aleyküm...";
     }
 
     public static void main(String[] args) {
