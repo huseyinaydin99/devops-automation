@@ -1,0 +1,53 @@
+minikube start
+minikube start --driver=virtualbox --no-vtx-check
+minikube start --driver=docker
+minikube status
+eval $(minikube docker-env)
+docker images
+open config
+kubectl create deployment hello-spring-boot --image=huseyin11/devops-integration:1.0 --port=9292
+kubectl get nodes
+kubectl get deploy -n spring-boot-k8s-deployment
+kubectl get deployments
+kubectl get pods
+kubectl logs spring-boot-k8s-deployment-845cfcf694-cnhnv
+
+kubectl expose deployment/hello-spring-boot-2 --type="NodePort" --port 8080
+kubectl get svc
+kubectl get services
+minikube service springboot-k8ssvc --url
+
+docker system prune
+minikube delete
+minikube start --driver=docker
+
+10.111.48.174
+minikube service hello-spring-boot-2 --url
+http://127.0.0.1:54755
+
+//Kubernetes Commands
+minikube start
+minikube status
+minikube docker-env
+docker build -t my-spring-boot-k8s-app .
+docker images
+kubectl apply -f deployment.yaml
+kubectl create --namespace kube-system -f deployment.yaml
+kubectl get deployments
+kubectl expose deployment/spring-boot-k8s-2 --type="NodePort" --port 8081
+kubectl create deployment/my-spring-boot-k8s --image=huseyin11/my-spring-boot-k8s-app:latest --port=9292
+kubectl get pods
+kubectl describe pods
+kubectl logs spring-boot-k8s-8845bfd7b-5njzr
+kubectl apply -f service.yaml
+kubectl get svc
+kubectl get services
+minikube service springboot-k8s-service --url
+kubectl get nodes -o wide
+minikube ip
+minikube dashboard
+
+docker push huseyin11/my-spring-boot-k8s-app:1.0
+docker push huseyin11/my-spring-boot-k8s-app:latest
+docker push my-spring-boot-k8s-app
+docker tag my-spring-boot-k8s-app:latest huseyin11/my-spring-boot-k8s-app:latest
